@@ -74,26 +74,26 @@
 // showTag.apply(poly, [5, 10, 15]);
 
 // -----------------------
-// bind
-// const showTag = function (arg1, arg2, arg3) {
-//   console.log(arg1, arg2, arg3);
-//   console.log("this", this);
-//   console.log("this.tag", this.tag);
-// };
+bind;
+const showTag = function (arg1, arg2, arg3) {
+  console.log(arg1, arg2, arg3);
+  console.log("this", this);
+  console.log("this.tag", this.tag);
+};
 
-// const mango = {
-//   tag: "Mango",
-// };
+const mango = {
+  tag: "Mango",
+};
 
-// const poly = {
-//   tag: "Poly",
-// };
+const poly = {
+  tag: "Poly",
+};
 
-// const showMangoTag = showTag.bind(mango);
-// const showPolyTag = showTag.bind(poly);
+const showMangoTag = showTag.bind(mango);
+const showPolyTag = showTag.bind(poly);
 
-// showMangoTag(1, 2, 3);
-// showPolyTag(5, 10, 15);
+showMangoTag(1, 2, 3);
+showPolyTag(5, 10, 15);
 
 // -----------------------
 // const mango = {
