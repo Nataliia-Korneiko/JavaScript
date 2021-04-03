@@ -1,21 +1,18 @@
 import './sass/styles.scss';
+import './js/base';
 import fetchArticles from './js/fetch-articles';
+import updateArticlesMarkup from './js/update-articles-markup';
+import refs from './js/refs';
 
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     Accept: 'application/json',
-//   },
-// };
+refs.searchForm.addEventListener('submit', event => {
+  event.preventDefault();
 
-// fetch('https://jsonplaceholder.typicode.com/todos', options);
+  const form = event.currentTarget;
+  const inputValue = form.elements.query.value;
+  // console.log(inputValue);
 
-// -----------------------
-// fetch('https://jsonplaceholder.typicode.com/users')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
+  refs.articlesContainer.innerHTML = '';
+  form.reset();
 
-// -----------------------
-// fetch('http://hn.algolia.com/api/v1/search?query=html&tags=story')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
+  fetchArticles(inputValue).then(updateArticlesMarkup); // колбек
+});
